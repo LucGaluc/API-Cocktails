@@ -27,7 +27,7 @@ function App() {
 
     return (
         <div className="App">
-            <h1>Moteur de recherche de cocktails</h1>
+            <h1>API-Cocktails</h1>
 
             <label htmlFor="cocktailName">Nom du cocktail :</label>
             <input
@@ -45,8 +45,15 @@ function App() {
                         <h2>{cocktail.strDrink}</h2>
                         <p>
                             <strong>Ingrédients :</strong>{" "}
-                            {cocktail.strIngredient1}, {cocktail.strIngredient2}
-                            , ...
+                            <ul>
+                                {Array.from({ length: 10 }, (_, i) => {
+                                    const ingredient =
+                                        cocktail[`strIngredient${i + 1}`];
+                                    return ingredient ? (
+                                        <li key={i}>{ingredient}</li>
+                                    ) : null;
+                                })}
+                            </ul>
                         </p>
                         <p>
                             <strong>Instructions :</strong>{" "}

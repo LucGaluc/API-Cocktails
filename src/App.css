@@ -1,42 +1,110 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.App {
+    background: linear-gradient(
+        45deg,
+        #ff00cc,
+        #3333ff
+    ); /* Dégradé de couleurs */
+    color: #fff; /* Couleur du texte */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+label {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input[type="text"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(
+        45deg,
+        #ff0066,
+        #ffcc00
+    ); /* Dégradé pour le champ de saisie */
+    color: #fff;
 }
 
-.card {
-  padding: 2em;
+button {
+    background: linear-gradient(
+        45deg,
+        #ff00cc,
+        #ffcc00
+    ); /* Dégradé pour le bouton */
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
 }
 
-.read-the-docs {
-  color: #888;
+#cocktailResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.cocktail {
+    background-color: #3333ff; /* Couleur de fond pour les résultats */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    position: relative;
+}
+
+.cocktail h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.cocktail p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 15px;
+}
+
+/* Animation pour les petits parasols qui tournent */
+.cocktail:before {
+    content: " ";
+    position: absolute;
+    background-image: url("umbrella.png");
+    width: 30px;
+    height: 30px;
+    top: -15px;
+    left: -15px;
+    animation: spin 8s infinite linear;
+    transform-origin: center;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
